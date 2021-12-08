@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Tester!</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2966/2966486.png" type="image/ico"/>
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#LD{
+    width: 100px;
+    height: 50px;
+    border:1px solid none;
+    outline: none;
+    flex: 1;
+    z-index: 2;
+    text-align: center;
+    color: whitesmoke;
+    transform: translate(117px, 50px);
+    padding: 5px;
+    position: fixed;
+}
+#LD:hover{
+    border-bottom: 2px solid  rgb(11, 126, 114);
+    transition: 0.5s ease-in;
+    background-color:rgb(27, 70, 65) ;
+    border-radius: 2px 2px 0px 0px;
+}
+#LD #L:hover{
+   /* text-decoration: underline turquoise; */
+   cursor: pointer;
+   color: whitesmoke;
+   /* background-color:turquoise ; */
+   transition: 0.4s;
+}
+#preloader{
+    border: 2px solid none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 580px;
+    background-color: white;
+}
+#preloader img{
+    border:0px solid none;
+    width:1060px;
+    height: 600px;
+}
+#main{
+    display: none;
+}
+#container h1{
+    text-decoration: underline turquoise;
+}
+#container{
+border: 2px solid none;
+overflow: hidden;
+width: 920px;
+height: 870px;
+background-color: black;
+background-image: linear-gradient(rgba(0,0,0,0.5), turquoise), url("https://www.hiresafe.com/wp-content/uploads/fl-builder/cache/medical-background-check-1-square.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+color: white;
+margin-top: 0px;
+}
+#container:hover{
+    border: 2.5px solid turquoise;
+    border-radius: 30px;
+    transition: 1s ease-in-out;
+}
+body{
+    background-color: rgb(24, 22, 22);
+}
+i{
+    font-size: 20px;
+    text-decoration: underline;
+}
+#imp{
+    font-size: 20px;
+    border: 2px solid none;
+    width: 285px;
+}
+#imp strong{
+    color: turquoise;
+}
+#imp {
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    animation: text 9s infinite alternate;
+    border-right:2px solid turquoise ; 
+    border-left:2px solid turquoise ; 
+}
+@keyframes text{
+    0%{
+        delay:2.5s;
+        width: 0ch;
+    }
+    100%{
+        width: 43ch;
+        delay: 2.5s;
+    }
+    /* 100%{
+        width: 0ch;
+    } */
+}
+#pulse{
+    border:2px solid none;
+}
+#pulse p{
+    font-size: 20px;
+}
+#pulse:hover{
+    text-decoration: underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+
+#inside{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#tem_hum p{
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#tem_hum:hover{
+    text-decoration:underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+footer{
+    width: 100%;
+    height: 220px;
+    background-color:rgba(20, 136, 124, 0.726);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer:hover{
+    border-top: 1.2px solid rgba(78, 143, 136, 0.726) ;
+    border-top-style: groove;
+}
+footer #f_1{
+   width: 350px;
+}
+ul .li_1{
+    text-decoration: underline;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+/* #f_1{
+    border-right: 2px dotted rgb(40, 131, 122);
+} */
+#f_1 li:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+#f_2{
+    border: 2px solid none;
+    margin-top: -50px;
+}
+#f_2 em:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+#f_3{
+    /* border-left: 2px dotted rgb(40, 131, 122); */
+    margin-top: -28px;
+}
+#f_3 h3:hover{
+  color: rgb(190, 181, 169);
+  transition: 0.5s;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgba(0,0,0,0.5), turquoise);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(turquoise, rgba(0,0,0,0.5));
+    transition: 0.7s;
+}
+@media screen and (max-width: 770px){
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgba(0,0,0,0.5), turquoise);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(turquoise, rgba(0,0,0,0.5));
+    transition: 0.7s;
+}
+#LD{
+    width: 75px;
+    height: 50px;
+    border:1px solid none;
+    outline: none;
+    flex: 1;
+    z-index: 2;
+    text-align: center;
+    color: whitesmoke;
+    transform: translate(40px, 50px);
+    padding: 5px;
+    position: fixed;
+}
+#LD:hover{
+    border-bottom: 2px solid  rgb(11, 126, 114);
+    transition: 0.5s ease-in;
+    background-color:rgb(27, 70, 65) ;
+    border-radius: 2px 2px 0px 0px;
+}
+#LD #L:hover{
+   /* text-decoration: underline turquoise; */
+   cursor: pointer;
+   color: whitesmoke;
+   /* background-color:turquoise ; */
+   transition: 0.4s;
+}
+#preloader{
+    border: 2px solid none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 580px;
+    background-color: white;
+}
+#preloader img{
+    border:0px solid none;
+    width:1060px;
+    height: 600px;
+}
+#main{
+    display: none;
+}
+#container h1{
+    text-decoration: underline turquoise;
+}
+#container{
+border: 2px solid none;
+width: 370px;
+height: 1170px;
+background-color: black;
+background-image: linear-gradient(rgba(0,0,0,0.5), turquoise), url("https://www.hiresafe.com/wp-content/uploads/fl-builder/cache/medical-background-check-1-square.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+color: white;
+}
+#container:hover{
+    border: 2.5px solid turquoise;
+    border-radius: 30px;
+    transition: 1s ease-in-out;
+}
+body{
+    background-color: rgb(24, 22, 22);
+}
+i{
+    font-size: 20px;
+    text-decoration: underline;
+}
+#imp{
+    font-size: 15px;
+    border: 2px solid none;
+    width: 285px;
+}
+#imp strong{
+    color: turquoise;
+}
+#imp {
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    animation: text 9s infinite alternate;
+    border-right:2px solid turquoise ; 
+    border-left:2px solid turquoise ;
+}
+@keyframes text{
+    0%{
+        delay:2.5s;
+        width: 0ch;
+    }
+    100%{
+        width: 44ch;
+        delay: 2.5s;
+    }
+}
+#pulse{
+    border:2px solid none;
+}
+#pulse p{
+    font-size: 20px;
+}
+#pulse:hover{
+    text-decoration: underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+#pulse iframe{
+    width: 360px;
+    height: 260px;
+}
+#inside{
+    border:2px solid none;
+    width: 100%;
+    height: 550px;
+}
+#inside iframe:nth-child(1){
+    transform: translate(155px, -140px);
+    width:360px;
+    height: 270px;
+}
+#inside iframe:nth-child(2){
+    transform: translate(-150px, 150px);
+    width: 360px;
+    height: 270px;
+}
+#tem_hum p{
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#tem_hum:hover{
+    text-decoration:underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+footer{
+    width: 100%;
+    height: 440px;
+    background-color:rgba(20, 136, 124, 0.726);
+} 
+footer:hover{
+    border-top: 1.2px solid rgba(78, 143, 136, 0.726) ;
+    border-top-style: groove;
+}
+footer #f_1{
+   width: 350px;
+}
+ul .li_1{
+    text-decoration: underline;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+#f_1{
+    border-right: 2px dotted rgb(40, 131, 122);
+    margin-top: -244px;
+  
+}
+#f_1 li:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+#f_2{
+    margin-top: -280px;
+    justify-content: space-evenly;
+
+}
+#f_2 em:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+#f_3{
+    border-left: 2px dotted rgb(40, 131, 122);
+    margin-top: -173px;
+}
+#f_3 h3:hover{
+  color: rgb(190, 181, 169);
+  transition: 0.5s;
+}
+}
+@media screen and (max-width: 400px){
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb{
+    background: linear-gradient(rgba(0,0,0,0.5), turquoise);
+    border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(turquoise, rgba(0,0,0,0.5));
+    transition: 0.7s;
+}
+#LD{
+    width: 60px;
+    height: 42px;
+    border:1px solid none;
+    outline: none;
+    flex: 1;
+    z-index: 2;
+    text-align: center;
+    /* color: whitesmoke; */
+    transform: translate(15px, 60px);
+    padding: 5px;
+    position: fixed;
+}
+#LD:hover{
+    border-bottom: 2px solid  rgb(11, 126, 114);
+    transition: 0.5s ease-in;
+    background-color:rgb(27, 70, 65) ;
+    border-radius: 2px 2px 0px 0px;
+}
+#LD #L:hover{
+   /* text-decoration: underline turquoise; */
+   cursor: pointer;
+   color: rgb(29, 204, 184) ;
+   /* background-color:turquoise ; */
+   transition: 0.4s;
+}
+#preloader{
+    border: 2px solid none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 580px;
+    background-color: white;
+}
+#preloader img{
+    border:0px solid none;
+    width:1060px;
+    height: 600px;
+}
+#main{
+    display: none;
+}
+#container h1{
+    text-decoration: underline turquoise;
+}
+#container{
+border: 2px solid none;
+width: 370px;
+height: 1170px;
+background-color: black;
+background-image: linear-gradient(rgba(0,0,0,0.5), turquoise), url("https://www.hiresafe.com/wp-content/uploads/fl-builder/cache/medical-background-check-1-square.jpg");
+background-size: cover;
+background-repeat: no-repeat;
+color: white;
+}
+#container:hover{
+    border: 2.5px solid turquoise;
+    border-radius: 30px;
+    transition: 1s ease-in-out;
+}
+body{
+    background-color: rgb(24, 22, 22);
+}
+i{
+    font-size: 20px;
+    text-decoration: underline;
+}
+#imp{
+    font-size: 15px;
+    border: 2px solid none;
+    width: 285px;
+}
+#imp strong{
+    color: turquoise;
+}
+#imp {
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center;
+    animation: text 9s infinite alternate;
+    border-right:2px solid turquoise ; 
+    border-left:2px solid turquoise ;
+}
+@keyframes text{
+    0%{
+        delay:2.5s;
+        width: 0ch;
+    }
+    100%{
+        width: 44ch;
+        delay: 2.5s;
+    }
+}
+#pulse{
+    border:2px solid none;
+}
+#pulse p{
+    font-size: 20px;
+}
+#pulse:hover{
+    text-decoration: underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+#pulse iframe{
+    width: 360px;
+    height: 260px;
+}
+#inside{
+    border:2px solid none;
+    width: 100%;
+    height: 550px;
+}
+#inside iframe:nth-child(1){
+    transform: translate(155px, -140px);
+    width:360px;
+    height: 270px;
+}
+#inside iframe:nth-child(2){
+    transform: translate(-150px, 150px);
+    width: 360px;
+    height: 270px;
+}
+#tem_hum p{
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+#tem_hum:hover{
+    text-decoration:underline turquoise;
+    transition: 0.6s;
+    color: black;
+}
+footer{
+    width: 100%;
+    height: 440px;
+    background-color:rgba(20, 136, 124, 0.726);
+} 
+footer:hover{
+    border-top: 1.2px solid rgba(78, 143, 136, 0.726) ;
+    border-top-style: groove;
+}
+footer #f_1{
+   width: 350px;
+}
+ul .li_1{
+    text-decoration: underline;
+    font-weight: bold;
+}
+li{
+    list-style: none;
+}
+#f_1{
+    border-right: 2px dotted rgb(40, 131, 122);
+    margin-top: -244px;
+  
+}
+#f_1 li:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+#f_2{
+    margin-top: -280px;
+    justify-content: space-evenly;
+
+}
+#f_2 em:hover{
+    color: rgb(190, 181, 169);
+    transition: 0.5s;
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+#f_3{
+    border-left: 2px dotted rgb(40, 131, 122);
+    margin-top: -173px;
+}
+#f_3 h3:hover{
+  color: rgb(190, 181, 169);
+  transition: 0.5s;
+}
+}
+</style>
+<!--code java code for preloader-->
+<script>
+    window.onload=function()
+{
+document.getElementById('preloader').style.display="none";
+document.getElementById('main').style.display="block";
+}
+</script>
+</head>
+<body>
+<center><div id="preloader">
+    <img src="https://cdn.dribbble.com/users/32512/screenshots/6503977/mad_loader_for_rr.gif" />
+    </div>
+</center>
+<div id="main">
+    <div id="LD">
+        <botton id="L">Light /<br>dark</botton>
+    </div>
+<center><div id="container">
+    &nbsp;
+    &nbsp;
+   <center><h1>Health Monitoring System!</h1></center>
+   &nbsp;
+   &nbsp;
+   &nbsp;
+   <center><div id="imp"><p>Measure <Strong>Heart-Beat</Strong> and <Strong>Temperature</Strong> of the body.</p></div></center>
+   &nbsp;
+   &nbsp;
+   <center><p><i>"Health is a state of complete harmony of the body and <strong>Mind.</strong> "</i></p></center>
+   &nbsp;
+   &nbsp;
+   <center><p>The result of Pulse and Temperature of the body as shown below.</p></center>
+   &nbsp;
+   &nbsp;
+   <center><div id="pulse">
+       <!-- <p >Your pulse.</p>
+       &nbsp;
+       &nbsp;
+       <br> -->
+       <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1580288/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Pulse&type=line"></iframe>
+   </div></center>
+   &nbsp;
+   &nbsp;
+   <hr>
+   &nbsp;
+  <center><div id="tem_hum">
+      <!-- <p>Your Temperature and Humidity.</p>
+      &nbsp;
+      &nbsp; -->
+      <div id="inside">
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1580288/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>       
+&nbsp;
+<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1580288/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidity&type=line"></iframe>
+      </div>
+  </div>
+</center>
+</div>
+</center>
+<br>
+<footer>
+<div id="f_1">
+<ul>
+    <center><p class="li_1">Our team members..</p>
+    &nbsp;
+    &nbsp;
+    <li>Muhammad yahya</li>
+    <li>Umair nasir</li>
+    <li>Syed Shoaib-ur-Rehman</li>
+    <li>Muhammad Abdullah</li></center>
+
+</ul>
+</div>
+&nbsp;
+&nbsp;
+<div id="f_2">
+    <h3 style="text-decoration: underline;">Superviser</h3>
+    <p>Thanks to <em><bold>Mr.Muhammad Mooazam</bold></em>,<br>
+    for his guidence we reach at our end of work.</p>
+</div>
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+<div id="f_3">
+    <h3>Project done at<br>NED university of Engineering and Technology.</h3>
+    &nbsp;
+    <h3><i>"Special Thanks to NAVTTC"</i></h3>
+    &nbsp;
+    <p>They will give us oppotunity for learning in Technology at veneue NED.</p>
+</div>
+</footer>
+</div>
+<script>
+    var color = ["rgb(76, 238, 222)", "rgb(24, 22, 22)"];
+    var i = 0;
+
+    document.querySelector("#L").addEventListener("click", 
+    function(){
+        i = i < color.length ? ++i :0;
+        document.querySelector("body").style.background = color[i];
+    });
+   
+</script>
+</body>
+</html>
