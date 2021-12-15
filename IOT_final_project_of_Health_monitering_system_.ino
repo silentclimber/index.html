@@ -16,8 +16,8 @@ const char myReadAPIKey[] = "1G2Z5O4AT4PWOV2E";
 // The SetUp Function:
 void setup() {
   Serial.begin(115200);
-  WiFi.begin("PTCL558", "yahyasattar");
-  while(WiFi.status() != WL_CONNECTED)
+  WiFi.begin("", "");     //here insert WiFi-name and Password between these double Qoumas.
+  while(WiFi.status() != WL_CONNECTED) 
   {
     delay(200);
     Serial.print("..");
