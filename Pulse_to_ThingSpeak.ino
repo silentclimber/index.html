@@ -32,18 +32,7 @@ if (data > 549 ){
   }
 else{
   Serial.println();
-//  ThingSpeak.writeField();
+
 }
-//data = analogRead(PulseSensorPurplePin);
-//Serial.println("Your Heart-beat is:");
-//Serial.begin(data);
-//ThingSpeak.writeField(myChannelNumber, 1, data, myWriteAPIkey);
-//delay(10);
-//if (data =< 549 ){
-//  Serial.begin();
-//
-//  }
-//else{
-//  Serial.begin(data);
-//}
+delay(200);
 }
